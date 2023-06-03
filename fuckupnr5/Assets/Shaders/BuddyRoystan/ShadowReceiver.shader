@@ -10,6 +10,8 @@
 		{
 			Tags
 			{
+				"RenderPipeline" = "UniversalPipeline"
+"LightMode" = "UniversalForward"
 				"Queue" = "Geometry+1"
 			}
 
