@@ -1,10 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+    [SerializeField] float maxSpeed;
+    [SerializeField] float acceleration;
+    [SerializeField] float deceleration;
+    CharacterController    cC;
+
+    void Awake()  { cC = GetComponent<CharacterController>(); }
+    void Update()
+    {
+        Move();
+    }
+    void Move()
+    {
+        float   horiz  = Input.GetAxis("Horizontal");
+        float   vertic = Input.GetAxis("Vertical");
+        Vector3 move   = transform.forward * vertic + transform.right * horiz;
+        cC.Move(maxSpeed * Time.deltaTime * move);
+    }
 }
 /*{
     //Ground
