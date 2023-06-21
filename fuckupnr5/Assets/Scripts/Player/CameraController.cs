@@ -1,10 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    
+    [SerializeField] float sensitivity;
+    [SerializeField] bool  inverted;
+    Camera                 cam;
+    void Awake()
+    {
+        cam = GetComponent<Camera>();
+    }
+    void Start()
+    {
+        
+    }
+    void Update()
+    {
+        
+    }
 }
 /*{
 
